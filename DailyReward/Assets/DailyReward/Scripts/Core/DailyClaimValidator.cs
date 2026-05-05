@@ -1,14 +1,17 @@
-using System;
-
-public class DailyClaimValidator : IClaimValidator
+namespace DailyReward
 {
-    public bool CanClaimToday(string lastClaimDate)
+    using System;
+
+    public class DailyClaimValidator : IClaimValidator
     {
-        if (string.IsNullOrEmpty(lastClaimDate))
-            return true;
+        public bool CanClaimToday(string lastClaimDate)
+        {
+            if (string.IsNullOrEmpty(lastClaimDate))
+                return true;
 
-        DateTime lastDate = DateTime.Parse(lastClaimDate);
+            DateTime lastDate = DateTime.Parse(lastClaimDate);
 
-        return DateTime.UtcNow.Date > lastDate.Date;
+            return DateTime.UtcNow.Date > lastDate.Date;
+        }
     }
 }

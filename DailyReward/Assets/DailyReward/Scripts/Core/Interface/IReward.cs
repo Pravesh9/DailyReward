@@ -1,7 +1,10 @@
-public interface IReward
+namespace DailyReward
 {
-    string RewardId { get; }
-    RewardState State { get; set; }
-    RewardSO rewardSO { get; set; }
-    void Claim();
+    public interface IReward
+    {
+        string RewardId { get; }
+        RewardState State { get; set; }
+        RewardSO rewardSO { get; set; }
+        void Claim();
+    }
 }

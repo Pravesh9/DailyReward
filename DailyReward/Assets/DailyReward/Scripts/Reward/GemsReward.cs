@@ -1,18 +1,21 @@
 using UnityEngine;
-public class GemsReward : Reward
+namespace DailyReward
 {
-    private readonly int amount;
-
-    public GemsReward(string rewardId, int amount, RewardSO rewardSO)
-        : base(int.Parse(rewardId), rewardSO)
+    public class GemsReward : Reward
     {
-        this.amount = amount;
-    }
+        private readonly int amount;
 
-    protected override void GiveReward()
-    {
-        // CurrencyManager.Instance.AddGems(amount);
+        public GemsReward(string rewardId, int amount, RewardSO rewardSO)
+            : base(int.Parse(rewardId), rewardSO)
+        {
+            this.amount = amount;
+        }
 
-        Debug.Log($"Added {amount} gems.");
+        protected override void GiveReward()
+        {
+            // CurrencyManager.Instance.AddGems(amount);
+
+            Debug.Log($"Added {amount} gems.");
+        }
     }
 }

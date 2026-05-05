@@ -1,31 +1,34 @@
 using UnityEngine;
-public abstract class Reward : IReward
+namespace DailyReward
 {
-    public string RewardId { get; protected set; }
-
-    public RewardState State { get; set; }
-    public RewardSO rewardSO { get; set; }
-
-    protected Reward(int rewardId, RewardSO rewardSO)
+    public abstract class Reward : IReward
     {
-        RewardId = rewardId.ToString();
-        this.rewardSO = rewardSO;
-    }
+        public string RewardId { get; protected set; }
 
-    public virtual void Claim()
-    {
-        if (State != RewardState.CLAIMABLE)
+        public RewardState State { get; set; }
+        public RewardSO rewardSO { get; set; }
+
+        protected Reward(int rewardId, RewardSO rewardSO)
         {
-            Debug.Log("Reward cannot be claimed.");
-            return;
+            RewardId = rewardId.ToString();
+            this.rewardSO = rewardSO;
         }
 
-        GiveReward();
+        public virtual void Claim()
+        {
+            if (State != RewardState.CLAIMABLE)
+            {
+                Debug.Log("Reward cannot be claimed.");
+                return;
+            }
 
-        State = RewardState.CLAIMED;
+            GiveReward();
 
-        Debug.Log($"{RewardId} claimed.");
+            State = RewardState.CLAIMED;
+
+            Debug.Log($"{RewardId} claimed.");
+        }
+
+        protected abstract void GiveReward();
     }
-
-    protected abstract void GiveReward();
 }

@@ -1,18 +1,21 @@
 using UnityEngine;
-public class CoinReward : Reward
+namespace DailyReward
 {
-    private readonly int amount;
-
-    public CoinReward(string rewardId, int amount, RewardSO rewardSO)
-        : base(int.Parse(rewardId), rewardSO)
+    public class CoinReward : Reward
     {
-        this.amount = amount;
-    }
+        private readonly int amount;
 
-    protected override void GiveReward()
-    {
-        // CurrencyManager.Instance.AddCoins(amount);
+        public CoinReward(string rewardId, int amount, RewardSO rewardSO)
+            : base(int.Parse(rewardId), rewardSO)
+        {
+            this.amount = amount;
+        }
 
-        Debug.Log($"Added {amount} coins.");
+        protected override void GiveReward()
+        {
+            // CurrencyManager.Instance.AddCoins(amount);
+
+            Debug.Log($"Added {amount} coins.");
+        }
     }
 }

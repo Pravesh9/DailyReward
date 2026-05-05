@@ -1,6 +1,9 @@
-public enum RewardType
+namespace DailyReward
 {
-    COINS,
-    GEMS,
-    ENERGY
+    public enum RewardType
+    {
+        COINS,
+        GEMS,
+        ENERGY
+    }
 }

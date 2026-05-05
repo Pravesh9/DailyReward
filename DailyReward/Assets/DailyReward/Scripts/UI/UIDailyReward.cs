@@ -1,62 +1,64 @@
 using System.Collections.Generic;
 using UnityEngine;
-
-public class UIDailyReward : MonoBehaviour
+namespace DailyReward
 {
-    [Header("UI References")]
-    [SerializeField]
-    private Transform rewardContainer;
-
-    [SerializeField]
-    private RewardTile rewardTilePrefab;
-
-    private readonly List<RewardTile> spawnedTiles = new();
-    private static UIDailyReward s_instance;
-
-    private void Awake()
+    public class UIDailyReward : MonoBehaviour
     {
-        s_instance = this;
-    }
-    public static void Init_S(List<IReward> rewards)
-    {
-        s_instance.Init(rewards);
-    }
-    /// <summary>
-    /// Initialize Daily Reward UI
-    /// Spawns reward tiles dynamically.
-    /// </summary>
-    private void Init(List<IReward> rewards)
-    {
-        ClearExistingTiles();
+        [Header("UI References")]
+        [SerializeField]
+        private Transform rewardContainer;
 
-        foreach (IReward reward in rewards)
+        [SerializeField]
+        private RewardTile rewardTilePrefab;
+
+        private readonly List<RewardTile> spawnedTiles = new();
+        private static UIDailyReward s_instance;
+
+        private void Awake()
         {
-            CreateRewardTile(reward);
+            s_instance = this;
         }
-    }
-
-    private void CreateRewardTile(IReward reward)
-    {
-        RewardTile tile =
-            Instantiate(
-                rewardTilePrefab,
-                rewardContainer);
-
-        tile.Initialize(reward);
-
-        spawnedTiles.Add(tile);
-    }
-
-    private void ClearExistingTiles()
-    {
-        foreach (RewardTile tile in spawnedTiles)
+        public static void Init_S(List<IReward> rewards)
         {
-            if (tile != null)
+            s_instance.Init(rewards);
+        }
+        /// <summary>
+        /// Initialize Daily Reward UI
+        /// Spawns reward tiles dynamically.
+        /// </summary>
+        private void Init(List<IReward> rewards)
+        {
+            ClearExistingTiles();
+
+            foreach (IReward reward in rewards)
             {
-                Destroy(tile.gameObject);
+                CreateRewardTile(reward);
             }
         }
 
-        spawnedTiles.Clear();
+        private void CreateRewardTile(IReward reward)
+        {
+            RewardTile tile =
+                Instantiate(
+                    rewardTilePrefab,
+                    rewardContainer);
+
+            tile.Initialize(reward);
+
+            spawnedTiles.Add(tile);
+        }
+
+        private void ClearExistingTiles()
+        {
+            foreach (RewardTile tile in spawnedTiles)
+            {
+                if (tile != null)
+                {
+                    Destroy(tile.gameObject);
+                }
+            }
+
+            spawnedTiles.Clear();
+        }
     }
 }

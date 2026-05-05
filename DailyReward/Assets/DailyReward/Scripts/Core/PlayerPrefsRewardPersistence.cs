@@ -1,26 +1,29 @@
 using UnityEngine;
-public class PlayerPrefsRewardPersistence : IRewardPersistence
+namespace DailyReward
 {
-    private const string LastClaimedDayKey = "LAST_DAY";
-    private const string LastClaimDateKey = "LAST_DATE";
-
-    public int GetLastClaimedDay()
+    public class PlayerPrefsRewardPersistence : IRewardPersistence
     {
-        return PlayerPrefs.GetInt(LastClaimedDayKey, 0);
-    }
+        private const string LastClaimedDayKey = "LAST_DAY";
+        private const string LastClaimDateKey = "LAST_DATE";
 
-    public void SaveLastClaimedDay(int day)
-    {
-        PlayerPrefs.SetInt(LastClaimedDayKey, day);
-    }
+        public int GetLastClaimedDay()
+        {
+            return PlayerPrefs.GetInt(LastClaimedDayKey, 0);
+        }
 
-    public string GetLastClaimDate()
-    {
-        return PlayerPrefs.GetString(LastClaimDateKey, "");
-    }
+        public void SaveLastClaimedDay(int day)
+        {
+            PlayerPrefs.SetInt(LastClaimedDayKey, day);
+        }
 
-    public void SaveLastClaimDate(string date)
-    {
-        PlayerPrefs.SetString(LastClaimDateKey, date);
+        public string GetLastClaimDate()
+        {
+            return PlayerPrefs.GetString(LastClaimDateKey, "");
+        }
+
+        public void SaveLastClaimDate(string date)
+        {
+            PlayerPrefs.SetString(LastClaimDateKey, date);
+        }
     }
 }

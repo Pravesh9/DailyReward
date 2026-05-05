@@ -1,4 +1,7 @@
-public interface IRewardFactory
+namespace DailyReward
 {
-    IReward CreateReward(RewardSO rewardData);
+    public interface IRewardFactory
+    {
+        IReward CreateReward(RewardSO rewardData);
+    }
 }

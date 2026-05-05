@@ -1,13 +1,16 @@
 using UnityEngine;
-
-[CreateAssetMenu(menuName = "Rewards/Reward Data")]
-public class RewardSO : ScriptableObject
+namespace DailyReward
 {
-    public int day;
 
-    public RewardType rewardType;
+    [CreateAssetMenu(menuName = "Rewards/Reward Data")]
+    public class RewardSO : ScriptableObject
+    {
+        public int day;
 
-    public int amount;
+        public RewardType rewardType;
 
-    public Sprite icon;
+        public int amount;
+
+        public Sprite icon;
+    }
 }

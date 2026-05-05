@@ -1,6 +1,9 @@
-public enum RewardState
+namespace DailyReward
 {
-    LOCKED,
-    CLAIMABLE,
-    CLAIMED
+    public enum RewardState
+    {
+        LOCKED,
+        CLAIMABLE,
+        CLAIMED
+    }
 }

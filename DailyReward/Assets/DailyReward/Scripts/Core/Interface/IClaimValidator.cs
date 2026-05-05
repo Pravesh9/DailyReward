@@ -1,4 +1,7 @@
-public interface IClaimValidator
+namespace DailyReward
 {
-    bool CanClaimToday(string lastClaimDate);
+    public interface IClaimValidator
+    {
+        bool CanClaimToday(string lastClaimDate);
+    }
 }

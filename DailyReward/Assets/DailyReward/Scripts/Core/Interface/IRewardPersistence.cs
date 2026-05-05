@@ -1,8 +1,11 @@
-public interface IRewardPersistence
+namespace DailyReward
 {
-    int GetLastClaimedDay();
-    void SaveLastClaimedDay(int day);
+    public interface IRewardPersistence
+    {
+        int GetLastClaimedDay();
+        void SaveLastClaimedDay(int day);
 
-    string GetLastClaimDate();
-    void SaveLastClaimDate(string date);
+        string GetLastClaimDate();
+        void SaveLastClaimDate(string date);
+    }
 }

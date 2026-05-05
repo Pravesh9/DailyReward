@@ -1,18 +1,21 @@
 using UnityEngine;
-public class RewardSoundPlayer : MonoBehaviour
+namespace DailyReward
 {
-    private void OnEnable()
+    public class RewardSoundPlayer : MonoBehaviour
     {
-        RewardEvents.OnRewardClaimed += PlaySound;
-    }
+        private void OnEnable()
+        {
+            RewardEvents.OnRewardClaimed += PlaySound;
+        }
 
-    private void OnDisable()
-    {
-        RewardEvents.OnRewardClaimed -= PlaySound;
-    }
+        private void OnDisable()
+        {
+            RewardEvents.OnRewardClaimed -= PlaySound;
+        }
 
-    private void PlaySound(IReward reward)
-    {
-        Debug.Log("Play reward sound");
+        private void PlaySound(IReward reward)
+        {
+            Debug.Log("Play reward sound");
+        }
     }
 }
