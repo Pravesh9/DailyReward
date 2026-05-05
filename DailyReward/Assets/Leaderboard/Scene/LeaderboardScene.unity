@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18f7c7a35a390343b58c53c4d94a7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCount: 100
+  playerCount: 30
 --- !u!4 &1248270060
 Transform:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5010210604092138645
+--- !u!1001 &1949678978
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -380,10 +380,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 756526663453597704, guid: 26b362e0c2e92174b8fa779994e3e1e0, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1390453847101959492, guid: 26b362e0c2e92174b8fa779994e3e1e0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -406,10 +402,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2350278929763048155, guid: 26b362e0c2e92174b8fa779994e3e1e0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2350278929763048155, guid: 26b362e0c2e92174b8fa779994e3e1e0, type: 3}
-      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2602788018348300275, guid: 26b362e0c2e92174b8fa779994e3e1e0, type: 3}
@@ -592,10 +584,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7522743436707797370, guid: 26b362e0c2e92174b8fa779994e3e1e0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -608,4 +596,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 537967904}
   - {fileID: 1248270060}
-  - {fileID: 5010210604092138645}
+  - {fileID: 1949678978}
