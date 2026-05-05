@@ -12,7 +12,10 @@ public class RewardTile : MonoBehaviour
     [SerializeField] private GameObject claimedMark;
     [SerializeField] private TextMeshProUGUI rewardText;
     [SerializeField] private TextMeshProUGUI dayText;
+    [SerializeField] private Image bg;
 
+    [SerializeField] private Sprite normalBG;
+    [SerializeField] private Sprite claimedBG;
     private IReward reward;
     const string DAY = "Day ";
     const string X = "x ";
@@ -74,16 +77,19 @@ public class RewardTile : MonoBehaviour
             case RewardState.LOCKED:
                 claimButton.interactable = false;
                 claimedMark.SetActive(false);
+                bg.sprite = normalBG;
                 break;
 
             case RewardState.CLAIMABLE:
                 claimButton.interactable = true;
                 claimedMark.SetActive(false);
+                bg.sprite = claimedBG;
                 break;
 
             case RewardState.CLAIMED:
                 claimButton.interactable = false;
                 claimedMark.SetActive(true);
+                bg.sprite = claimedBG;
                 break;
         }
     }
